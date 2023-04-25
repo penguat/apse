@@ -2,9 +2,11 @@
   "name": "portable-search-engine",
   "version": "0.1.0",
   "description": "Alex/penguat's Portable Search Engine",
-  "main": "index.js",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
