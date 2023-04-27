@@ -5,7 +5,17 @@ export default class SearchEngine {
     this.storedIndex.push(document)
   }
 
-  search(query: string): Array<string> {
-    return this.storedIndex.filter(element => element.includes(query));
+  search(query: string): Result {
+    const results = this.storedIndex.filter(element => element.includes(query));
+    
+    return {
+      results: results,
+      totalResults: results.length
+    }
   }
+}
+
+type Result = {
+  results: Array<string>,
+  totalResults: Number
 }
